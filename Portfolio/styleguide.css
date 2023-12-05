@@ -1,0 +1,20 @@
+:root {
+  --text-font-family: "Inter-Regular", Helvetica;
+  --text-font-weight: 400;
+  --text-font-size: 12px;
+  --text-letter-spacing: 0px;
+  --text-line-height: normal;
+  --text-font-style: normal;
+  --header-1-font-family: "Inconsolata-SemiExpandedLight", Helvetica;
+  --header-1-font-weight: 300;
+  --header-1-font-size: 40px;
+  --header-1-letter-spacing: 0px;
+  --header-1-line-height: normal;
+  --header-1-font-style: normal;
+  --header-desktop-font-family: "Inconsolata-SemiExpandedLight", Helvetica;
+  --header-desktop-font-weight: 300;
+  --header-desktop-font-size: 50px;
+  --header-desktop-letter-spacing: 0px;
+  --header-desktop-line-height: normal;
+  --header-desktop-font-style: normal;
+}
