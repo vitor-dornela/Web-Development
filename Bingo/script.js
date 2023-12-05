@@ -155,9 +155,9 @@ function jogarBingo() {
 
                 vetorJogadores.forEach(function (jogador) {
                     if (verificaCartela(jogador.cartela, numerosSorteados, 25)) {
-                        console.log(`${jogador.nome} ganhou o BINGO!`);
+                        console.log(`${jogador.nome} ganhou!!`);
                         let h2Vencedor = document.getElementById("vencedor");
-                        h2Vencedor.innerText += `${jogador.nome} ganhou o BINGO!\n`;
+                        h2Vencedor.innerText += `${jogador.nome} ganhou!!\n`;
                         clearInterval(intervalo);
                         jogoRolando = false;
                     }
