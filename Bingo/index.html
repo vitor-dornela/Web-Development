@@ -1,48 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BINGO</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BinGo.o</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="jumbotron jogo-header">
-            <h1 class="display-4 centro">BINGO MASSA</h1>
-            <h2 id="vencedor"></h2>
-        </div>
+    <!-- Cabecalho do jogo -->
+    <div class="game-header">
+        <h1 style="color: rgb(226, 43, 214);">Bingo Rainbow Unicorn</h1>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <div class="centro">
-                    <button id="botaoGerarCartela" class="btn btn-primary" onclick="gerarCartelaHTML()">Criar cartela</button>
-                    <button id="reset" style="margin-left: 10px;" class="btn btn-secondary" onclick="reiniciarJogo()">Reiniciar Jogo</button>
-                </div>
-                <div id="bingo" class="row border border-primary border-4" style="margin-top: 20px;"></div>
-            </div>
-            <div class="col">
-                <h1 class="centro">Área do Jogo</h1>
-                <div class="centro" style="margin-bottom: 20px;">
-                    <button id="botaoJogar" class="btn btn-danger" onclick="jogarBingo()">Jogar</button>
-                </div>
-                <div class="container">
-                    <div class="row" id="sorteados">
-                
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Mostrar vencedor -->
+    <div class="game-winner">
+        <h2 id="vencedor"></h2>
     </div>
+    <!-- Controles do jogo -->
+    <div class="game-controls">
+        <div class="card-control">
+            <button id="botaoGerarCartela" onclick="gerarCartelaHTML()">Criar cartela</button>
+            <button id="reset" style="margin-left: 10px;" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+            
+        </div>
+        <div class="drawn-numbers">
+            <button id="botaoJogar" onclick="jogarBingo()">Iniciar Jogo</button>
 
-    <script src="script.js"></script>
+        </div>
+    </div>
+    <!-- Header do jogo -->
+    <div class="game-header">
+        <!-- Header das cartelas -->
+        <div class="card-area">
+            <h3 style="color: rgb(245, 245, 245);">Cartelas dos jogadores (mínimo 2)</h3>
+        </div>
+        <!-- Header dos números sorteados -->
+        <div class="draw-area">
+            <h3 style="color: blue;">Números Sorteados</h3>
+        </div>
+    </div>
+    <!-- Área do jogo -->
+    <div class="game-area">
+        <!-- Área das cartelas -->
+        <div class="card-area2">
+            <div id="bingo" style="margin-top: 5px;"></div>
+        </div>
+        <!-- Área dos números sorteados -->
+        <div class="draw-area2" id="sorteados">
+        </div>
+    </div>
+    <script src="script2.js"></script>
 </body>
-
 </html>

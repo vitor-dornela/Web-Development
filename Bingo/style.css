@@ -1,16 +1,6 @@
-.borda-tabela {
-    border: 1px solid black;
-    margin: 5px;
-}
-
-th, td {
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-}
-
-.jogo-header{
-    background-color: rgb(255, 228, 92);
+/* Cabecalho do jogo */
+.game-header {
+    background-color: rgb(89, 237, 104);
     width: 100%;
     height: 70px;
     display: flex;
@@ -18,22 +8,134 @@ th, td {
     justify-content: center;
 }
 
-.centro{
+/* Vencedor do jogo */
+.game-winner {
+    color: rgb(157, 0, 147);
+    background-color: aqua;
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-.sorteado{
+/* Botões do jogo */
+.game-controls {
+    width: 100%;
+    height: 70px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+}
+
+/* Botões do jogo: Criar cartela/Reiniciar */
+.card-control {
+    flex: 0 0 70%;
+    background-color: rgb(247, 255, 92);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Botões do jogo: Jogar */
+.drawn-numbers {
+    flex: 0 0 30%;
+    background-color: rgb(255, 160, 92);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Área do jogo*/
+.game-area {
+    width: 100%;
+    display: flex;
+}
+
+/* Header do jogo: Cartela */
+.card-area {
+    flex: 0 0 70%;
+    background-color: rgb(103, 92, 255);
+    height: 70px;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Área do jogo: Cartela */
+.card-area2 {
+    flex: 0 0 70%;
+    background-color: rgb(129, 120, 255);
+    width: 100%;
+    height: auto-fill;
+    display: flex; /* Using flexbox instead of grid */
+    flex-wrap: wrap; /* This will allow items to wrap to the next line if there's not enough space */
+    align-items: flex-start; /* Aligns items to the start of the container */
+    justify-content: flex-start; /* Justifies items to the start of the container */
+}
+
+/* Header do jogo: Numeros sorteados */
+.draw-area {
+    flex: 0 0 30%;
+    background-color: rgb(255, 92, 168);
+    width: 100%;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    float: left;
+}
+
+/* Área do jogo: Numeros sorteados */
+.draw-area2 {
+    flex: 0 0 30%;
+    background-color: rgb(255, 138, 193);
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    align-items: start;
+    flex-wrap: wrap-reverse;
+    float: inline-start;
+    position: relative;
+    justify-content: start;
+}
+
+.borda-tabela {
+    border: 1px solid black;
+    margin: 1px;
+}
+
+/* Table header & Table data */
+th, td {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.col-2 {
+    flex-basis: 15%;
+    max-width: 15%;
+}
+
+col-4 {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.sorteado{
+    display: flex;
+    align-items: start;
     justify-content: center;
     font-size: 25px;
     width: 30px;
     height: 30px;
     color: blue;
     background-color: pink;
-    border: 1px solid blueviolet;
-    border-radius: 25px;
+    border: 1px solid rgb(34, 20, 47);
+    border-radius: 28px;
     margin: 5px;
 }
