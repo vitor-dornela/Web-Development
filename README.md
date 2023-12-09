@@ -1,4 +1,4 @@
-# Repositório com todos projetos de desenvolvimento web desenvolvidos por mim
+# Repositório com projetos de desenvolvimento web desenvolvidos por mim
 ### Para acessar os projetos hospedados e em funcionamento:
 
 ## Jogo de adivinhar cor
