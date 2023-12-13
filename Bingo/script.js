@@ -148,6 +148,8 @@ function checkGame(drawn_numbers){
         if (card_number.innerText == drawn_numbers) {
             // colors the drawn number in the card 
             card_number.classList.add('colorDrawnNumber');
+            console.log(card_number)
+
         }
     }
 }
