@@ -4,6 +4,11 @@ document.getElementById('header-title').style.display = 'none';
 // Show winner section
 document.getElementById('winner-section').style.display = 'block';
 
+//Store players
+let players = [];
+//Store drawn numbers
+let drawnNumbers = [];
+
 function createCards(player) {
 
     // Select where to create the cards
@@ -63,7 +68,7 @@ function createCards(player) {
 
 }
 
-
+// Generates card columns acording to Bingo rules (0-15, 16-30, 31-45, 46-60, 61-75)
 function generateColumn (length, min, max) {
     let column = [];
     while (column.length < length) {
@@ -76,10 +81,13 @@ function generateColumn (length, min, max) {
 }
 
 
+/**
+ * Generate an array of cards.
+ *
+ * @return {Array} The array of generated cards.
+ */
 function generateCards() {
     let cards = [generateColumn(5, 1, 15), generateColumn(5, 16, 30), generateColumn(5, 31, 45), generateColumn(5, 46, 60), generateColumn(5, 61, 75)];
-
-    console.log(cards);
     return cards;
 }
 
@@ -99,5 +107,47 @@ function subscribePlayer() {
         card: card
     };
 
+    players.push(player);
     createCards(player);
+}
+
+function play(){
+    if (players.length < 2) {
+        alert('Insira pelo menos 2 jogadores');
+    }
+
+    // Interval to draw the numbers
+    let randomDrawnNumber;
+
+    setInterval(function() {
+        while(true) {
+            randomDrawnNumber = Math.floor(Math.random()*75 +1);
+            if (!drawnNumbers.includes(randomDrawnNumber)){
+                drawnNumbers.push(randomDrawnNumber);
+                break;
+            }
+        }
+        //Create the numbers in draw_body div
+        const div_draw_body = document.getElementById('draw_body');
+        const span_draw = document.createElement('span');
+        span_draw.innerText = randomDrawnNumber;
+        div_draw_body.appendChild(span_draw);
+
+        // Check game status
+        checkGame(randomDrawnNumber);
+
+
+    }, 100);
+}
+
+
+function checkGame(drawn_numbers){
+    let card_numbers = document.getElementsByTagName('td');
+
+    for (let card_number of card_numbers) {
+        if (card_number.innerText == drawn_numbers) {
+            // colors the drawn number in the card 
+            card_number.classList.add('colorDrawnNumber');
+        }
+    }
 }

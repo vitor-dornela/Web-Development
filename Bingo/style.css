@@ -97,6 +97,31 @@ div#cards_body, div#draw_body {
     padding: 15px;
     
 }
+
+/* Drawn balls */
+div#draw_body span {
+    background-color: #be8fff;
+    color: #5d02db;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin: 0.2rem;
+    border: 0.1rem solid #6d15e9;
+
+}
+
+.colorDrawnNumber {
+    background-color: #6d15e9;
+    color: #26e9e9;
+    font-weight: 600;
+}
+
+
     
 div.cards {
     display: flex;
@@ -131,6 +156,7 @@ th, td {
     width: 2rem;
     height: 2rem;
 }
+
 
 
 /* Style for the footer */
