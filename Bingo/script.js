@@ -122,8 +122,14 @@ function play(){
     // Minimum number of players
     if (players.length < 2) {
         alert('Insira pelo menos 2 jogadores');
-    }
-    if  (!gameRunning) {
+    };
+    // Prevent game to start if it is already running
+    if (gameRunning) {
+        alert("O jogo já está em andamento!");
+    };
+
+    // Start the game
+    if  (!gameRunning && players.length > 1) {
 
     // Set game status to running
     gameRunning = true;
@@ -162,11 +168,8 @@ function play(){
 
     // time in miliseconds to draw each number
     }, 100);
-    } // end if (!gameRunning)
-    else {
-        alert("O jogo já está em andamento!");
+    }; // end if
     
-    };
     
 }
 
