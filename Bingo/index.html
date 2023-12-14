@@ -14,8 +14,8 @@
         
         <section id="winner-section" style="display: none;">
             <div id="winner-content">
-                <button>Play Again</button>
-                <h2>Winner: <span id="winner-name"></span></h2>
+                <button onclick="restart()">Reiniciar</button>
+                <h2> <span id="winner-name"></span></h2>
             </div>
         </section>
     </header>
@@ -26,6 +26,7 @@
             <div id="cards_header">
                 <h2>Cartelas</h2>
                 <button onclick="subscribePlayer()">Gerar</button>
+                <button onclick="restart()">Limpar</button>
             </div>
             
             <div id="cards_body">

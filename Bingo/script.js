@@ -1,13 +1,11 @@
-// Hide header title
-document.getElementById('header-title').style.display = 'none';
-
-// Show winner section
-document.getElementById('winner-section').style.display = 'block';
-
 //Store players
 let players = [];
 //Store drawn numbers
 let drawnNumbers = [];
+
+let gameRunning = false;
+let gameInterval;
+let winner;
 
 function createCards(player) {
 
@@ -93,6 +91,12 @@ function generateCards() {
 
 function subscribePlayer() {
 
+    // Prevent to add players when game is running 
+    if(gameRunning) {
+        alert("Não é possível adicionar jogadores com o jogo em andamento!");
+    } 
+    else {
+        
     // Get player name
     const name = prompt('Digite o nome do player: ');
     if (name.length < 4) {
@@ -101,7 +105,7 @@ function subscribePlayer() {
     }
     const card = generateCards();
 
-    // Create object player
+    // Create player object 
     const player = {
         name: name,
         card: card
@@ -109,17 +113,25 @@ function subscribePlayer() {
 
     players.push(player);
     createCards(player);
+    };
 }
 
 function play(){
+    
+
+    // Minimum number of players
     if (players.length < 2) {
         alert('Insira pelo menos 2 jogadores');
     }
+    if  (!gameRunning) {
 
-    // Interval to draw the numbers
+    // Set game status to running
+    gameRunning = true;
+  
     let randomDrawnNumber;
 
-    setInterval(function() {
+    // Set the pace and draw the numbers
+    gameInterval = setInterval(function() {
         while(true) {
             randomDrawnNumber = Math.floor(Math.random()*75 +1);
             if (!drawnNumbers.includes(randomDrawnNumber)){
@@ -131,25 +143,112 @@ function play(){
         const div_draw_body = document.getElementById('draw_body');
         const span_draw = document.createElement('span');
         span_draw.innerText = randomDrawnNumber;
+        console.log(randomDrawnNumber)
+
         div_draw_body.appendChild(span_draw);
 
-        // Check game status
-        checkGame(randomDrawnNumber);
+        // Color drawn numbers in the cards
+        colorDrawnNumber(randomDrawnNumber);
 
+        // Set the winner
+        checkWinner();
 
+        // Stop the game, if for any reason all numbers are drawn
+        if (drawnNumbers.length >= 75) {
+            alert("Sorteio Finalizado!");
+            clearInterval(gameInterval);
+        }
+        
+
+    // time in miliseconds to draw each number
     }, 100);
+    } // end if (!gameRunning)
+    else {
+        alert("O jogo já está em andamento!");
+    
+    };
+    
 }
 
+function colorDrawnNumber(drawnNumber) {
+    let cardNumbers = document.getElementsByTagName('td');
 
-function checkGame(drawn_numbers){
-    let card_numbers = document.getElementsByTagName('td');
-
-    for (let card_number of card_numbers) {
-        if (card_number.innerText == drawn_numbers) {
-            // colors the drawn number in the card 
-            card_number.classList.add('colorDrawnNumber');
-            console.log(card_number)
-
+    for (let cardNumber of cardNumbers) {
+        if (cardNumber.innerText == drawnNumber) {
+            // Color the drawn number in the card
+            cardNumber.classList.add('colorDrawnNumber');
         }
+    }
+}
+
+// Function to check if a player has won
+function checkPlayerCard(card, drawnNumbers, numbersToWin) {
+    if (drawnNumbers.length < numbersToWin) {
+        return false;
+    }
+
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            if (drawnNumbers.includes(card[i][j])) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+function checkWinner() {
+    players.forEach(function(player) {
+        if (checkPlayerCard(player.card, drawnNumbers, 25)) {
+            console.log(`${player.name} venceu!`);
+            let winnerElement = document.getElementById("winner-name");
+            winnerElement.innerText = `${player.name} venceu!`;
+            clearInterval(gameInterval);
+            winner = player.name;
+            console.log(winner);
+
+            // Hide header title
+            document.getElementById('header-title').style.display = 'none';
+            // Show winner section
+            document.getElementById('winner-section').style.display = 'block';
+            
+        }
+    });
+    return winner;       
+}
+
+function restart(){
+    let cards_area = document.querySelector("#cards_body");
+    let draw_area = document.querySelector("#draw_body");
+
+    let cards = document.querySelectorAll("#cards_body > div");
+    let span = document.querySelectorAll("#draw_body > span");
+
+    if (winner != null) {
+        gameRunning = false;
+    }    
+    if(cards.length > 0 && !gameRunning) {
+        cards.forEach(function(card){
+            cards_area.removeChild(card);
+        });
+        span.forEach(function(drawnNumbers){
+            draw_area.removeChild(drawnNumbers);
+        })
+        winner = document.getElementById("winner-name");
+        winner.innerText = "";
+        players = [];
+        drawnNumbers = [];
+        gameRunning = false
+
+    // Show header title
+    document.getElementById('header-title').style.display = 'flex';
+    // Hide winner section
+    document.getElementById('winner-section').style.display = 'none';
+    }
+    if (gameRunning){
+        alert("Você não pode reiniciar o jogo enquanto ele está rolando!")
     }
 }
