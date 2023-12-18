@@ -9,3 +9,7 @@ Sorteio: Um "chamador" sorteia aleatoriamente números e os anuncia para os joga
 Objetivo: Vence quem completar toda a cartela (chamado de "bingo") primeiro.
 
 [Clique para jogar](https://vitor-dornela.github.io/Web-Development/Bingo/)
+
+## Future upgrades
+
+- mobile responsive
