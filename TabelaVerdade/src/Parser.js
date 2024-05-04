@@ -221,10 +221,10 @@ class Parser {
 
 	xor() {
 		let x = this.konjunktion(), y, z;
-		while( this.token != null && this.token == "↮" ) {
+		while( this.token != null && this.token == "⊕" ) {
 			this.gettoken();
 			y = this.konjunktion();
-			z = new Knoten( "↮", 2, function(a,b)
+			z = new Knoten( "⊕", 2, function(a,b)
 				{ return (a && !b) || (b && !a); } );
 			z.set_child( 0, x );
 			z.set_child( 1, y );
