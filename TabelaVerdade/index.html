@@ -24,11 +24,11 @@
 
 <meta name="viewport" content="width=width, initial-scale=1">
 
-<script src="./src/Knoten.js.download" charset="utf-8"></script>
-<script src="./src/Parser.js.download" charset="utf-8"></script>
-<script src="./src/Wahrheitstabelle.js.download" charset="utf-8"></script>
+<script src="./src/Knoten.js" charset="utf-8"></script>
+<script src="./src/Parser.js" charset="utf-8"></script>
+<script src="./src/Wahrheitstabelle.js" charset="utf-8"></script>
 
-<script src="./src/interface.js.download" charset="utf-8"></script>
+<script src="./src/interface.js" charset="utf-8"></script>
 
 <noscript>
 <style> .scriptsEnabled { display: none } </style>
@@ -152,7 +152,7 @@ your computer).
 <div id="Eingabebereich" class="eingabebereich">
 
 <p>
-<input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔↮()&amp;|&lt;=&gt;~!,]+" style="width:97%;">
+<input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:97%;">
 </p>
 
 <div class="knopfgruppe">
@@ -171,7 +171,7 @@ your computer).
 <button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
 <button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
 <button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
-<button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">↮</button>
+<button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">⊕</button>
 </span>
 
 <span class="knopfgruppe">
