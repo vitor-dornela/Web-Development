@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.erpelstolz.at/gateway/TruthTable.html -->
+<html lang="en" class=" xqsktwjv idc0_350"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Calculadora de tabelas verdade</title>
+
+<link rev="made" rel="author" href="mailto:christian.gottschall@posteo.de">
+<link rel="canonical" href="https://www.erpelstolz.at/gateway/TruthTable.html">
+
+<link rel="alternate" hreflang="de" href="https://www.erpelstolz.at/gateway/Wahrheitstabellen.html">
+<link rel="alternate" hreflang="en" href="https://www.erpelstolz.at/gateway/TruthTable.html">
+
+<link rel="shortcut icon" href="https://www.erpelstolz.at/gateway/rsc/favicon-table.ico" type="image/x-icon">
+<link rel="icon" href="https://www.erpelstolz.at/gateway/rsc/favicon-table.ico" type="image/x-icon">
+
+<meta name="description" content="This is a versatile truth-table calculator for propositional logic. It is dedicated to the memory of Dr. Klaus Dethloff who taught this stuff and much more.">
+
+
+<meta name="keywords" content="Logic Calculator, truth table, Wahrheitstabelle, Wahrheitstafel, propositional logic, Aussagenlogik">
+
+<link rel="stylesheet" type="text/css" href="./src/normal-5.css">
+<link rel="stylesheet" type="text/css" href="./src/formular-5.css">
+<link rel="stylesheet" type="text/css" href="./src/monster-5.css">
+
+<meta name="viewport" content="width=width, initial-scale=1">
+
+<script src="./src/Knoten.js.download" charset="utf-8"></script>
+<script src="./src/Parser.js.download" charset="utf-8"></script>
+<script src="./src/Wahrheitstabelle.js.download" charset="utf-8"></script>
+
+<script src="./src/interface.js.download" charset="utf-8"></script>
+
+<noscript>
+<style> .scriptsEnabled { display: none } </style>
+</noscript>
+
+</head>
+
+
+<body onload="wahrheitstabelle_script_enabled()" data-new-gr-c-s-check-loaded="14.1170.0" data-gr-ext-installed="">
+
+
+<main>
+
+<header>
+<h1>Logic Calculator: Truth Tables</h1>
+<p>(featuring a purple monster and a psychic duck)</p>
+</header>
+
+
+<nav>
+<p>
+<a href="https://www.erpelstolz.at/gateway/formular-uk.html">Other programs</a> — <a href="https://www.erpelstolz.at/christian/homepage-uk.html">author</a> — <a href="https://www.erpelstolz.at/gateway/Wahrheitstabellen.html">Deutsch</a>
+</p>
+</nav>
+
+
+
+<div id="scriptsEnabled" class="scriptsEnabled" style="display: inline;">
+
+
+<section> <!-- intro -->
+
+<details open="">
+<summary>Welcome to this truth-table calculator for classical logic.
+Click this heading to see a more detailed introduction.</summary>
+
+
+<h2>Introduction</h2>
+
+<div style="margin-left:1em; max-width:42em;">
+
+<p>
+This truth-table calculator for classical logic shows, well,
+<a href="https://www.britannica.com/topic/truth-table">truth-tables</a>
+for propositions of classical logic. Featuring a purple munster and a duck,
+and optionally showing intermediate results, it is one of the better
+instances of its kind.
+</p>
+
+<p>
+Use the buttons below (or your keyboard) to enter a proposition, then
+gently touch the duck to have it calculate the truth-table for you. Each
+time you touch the friendly monster to the duck's left, it will eat
+up a character (or, if there is selected text, the whole selection). If
+you double-click the monster, it will eat up the whole input (yum!).
+</p>
+<p>Once the
+table is there, use the button "Show intermediate results" or
+"Hide intermediate results" to show or hide intermediate
+results in the table.
+</p>
+
+<p>
+Since 2021 you may enter more than one proposition at a time, separating
+them with commas (e.g. " P∧Q, P∨Q, P→Q"). This
+makes it easier e.g. to compare propositions and to check if an argument
+is semantically valid.
+</p>
+
+<p>
+See a few examples below. Clicking on an example will copy it to the
+input field. Alternatively, you may leave the input field completely
+empty. On touching the duck, its psychic personality will find out
+what proposition you are thinking of (this is an experimental feature).
+</p>
+
+<p>
+<span onclick="ueberschreibknopfGedrueckt(this)">(P→Q)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P∧Q)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P∨Q)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P⊽Q)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P↮Q)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P∨¬P)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P∧¬P)</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P→((Q→R)∧(¬S∨R)))</span> —
+<span onclick="ueberschreibknopfGedrueckt(this)">(P→Q)∨(Q→R)</span>
+<span onclick="ueberschreibknopfGedrueckt(this)">((P ⊼ Q) ⊽ (P ⊼ Q))</span>
+</p>
+
+<p>
+If you prefer using your keyboard, you may use the strings "&amp;"
+or "&amp;&amp;" to denote "∧"; the strings
+"|" or "||" to denote "∨"; the strings
+"=&gt;" or "-&gt;" to denote "→"; the string
+"&lt;=&gt;" or "&lt;-&gt;" to denote "↔";
+and the strings "!" or "~" to denote "¬".
+</p>
+
+<p>
+The tables are calculated in your
+browser, so the calculator is available offline, and the government won't
+ever find out what propositions you are working with (unless it hacks
+your computer).
+</p>
+
+
+</div>
+
+</details>
+
+</section> <!-- intro -->
+
+
+<!--  Eingabebereich -->
+
+<section> 
+
+<h2>Proposition</h2>
+
+
+<div id="Eingabebereich" class="eingabebereich">
+
+<p>
+<input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔↮()&amp;|&lt;=&gt;~!,]+" style="width:97%;">
+</p>
+
+<div class="knopfgruppe">
+<input type="image" src="./src/monster-klein.png" class="monsterklasse" name="EraseButton" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" style="height:85px;">
+<input type="image" src="./src/gans-klein.png" name="AcceptButton" id="AcceptButton" alt="Duck that will show a truth-table" onclick="tabellenbau()" style="height:85px;">
+</div>
+
+
+<p id="Fehlerfeld" class="fehlermeldung" style="display: none; width: auto;">No errors so far.</p>
+
+<div id="knoepfe" class="knopfbereich">
+
+<span class="knopfgruppe">
+<button type="button" title="Negation (not)" onclick="knopfGedrueckt(this)">¬</button>
+<button type="button" title="Conjunction (and)" onclick="knopfGedrueckt(this)">∧</button>
+<button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
+<button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
+<button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
+<button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">↮</button>
+</span>
+
+<span class="knopfgruppe">
+<button type="button" title="Conditional (if… then)" onclick="knopfGedrueckt(this)">→</button>
+<button type="button" title="Biconditional" onclick="knopfGedrueckt(this)">↔</button>
+<button type="button" title="Open bracket" onclick="knopfGedrueckt(this)">(</button>
+<button type="button" title="Closed bracket" onclick="knopfGedrueckt(this)">)</button>
+</span>
+
+
+<span class="knopfgruppe">
+
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">P</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">Q</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">R</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">S</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">T</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">U</button>
+</span>
+
+<span class="knopfgruppe">
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">A</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">B</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">C</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">D</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">E</button>
+<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">F</button>
+</span>
+
+<span class="knopfgruppe">
+<button type="button" title="Further proposition" onclick="knopfGedrueckt(this)">,</button>
+</span>
+
+</div> <!-- Knöpfe -->
+
+</div> <!-- Eingabebereich -->
+
+</section>
+
+
+<hr style="margin-top:1em;">
+
+
+<section>
+
+<h2 id="TruthTableHeader">Truth Table</h2>
+
+<div id="Ausgabebereich">
+
+<p id="ChangeVerbosity" style="display: block;">
+<button type="button" id="VerbosityButton" title="Change verbosity" onclick="change_verbosity()" style="width:auto; height:auto; font-size:large;">Show intermediate results</button>
+</p>
+
+<div id="Uebersichtstabelle" style="display: block;">
+
+<table class="Uebersichtstabelle" style="width: auto;"><thead><tr><th>P</th><th>Q</th><th style="padding-right: 1em;">R</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P → ¬(Q ∨ R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P ∨ (¬Q ∨ ¬R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P ∨ (Q ∨ R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P → (¬Q ∧ ¬R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">((Q ∨ R) → P)</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(¬P → (Q ∨ R))</th></tr></thead><tbody style="z-index: 5;"><tr><td>T</td><td>T</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>T</td><td>T</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>T</td><td>F</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>T</td><td>F</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>T</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>T</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>F</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>F</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td></tr></tbody></table></div>
+
+<div id="Detailtabelle" style="display: none;"></div>
+
+</div> <!-- Ausgabebereich -->
+
+</section>
+
+
+</div>  <!-- javascriptEnabled -->
+
+
+<noscript>
+
+<p style="font-size:125%;">
+
+<img src="rsc/monster.png" class="monsterklasseDauerhaft" alt="Monster that would like you to use the JavaScript version of this calculator" style="height:85px; float:left; margin-right:1em; margin-bottom:0.5em;">
+
+This truth-table calculator needs JavaScript to run properly (or, rather,
+to run at all). But fear not - if you don't like JavaScript, but still
+want to see truth-tables, you may use the truth-table functions of
+the <a href="formular-uk-zentral.html">server-side logic calculator</a>.
+On the other hand, if your browser does support JavaScript, you might
+ponder to turn it on for this page.
+</p>
+
+</noscript>
+
+
+
+</main>
+
+<hr style="clear:both;">
+
+<div class="spende">
+<div style="float:left; margin-right:1em;">
+
+<form action="https://www.paypal.com/donate" method="post" target="_blank">
+<input type="hidden" name="business" value="WNVV2HW7JB9E2">
+<input type="hidden" name="item_name" value="Duck Pride Canned Worms - Software">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="submit" name="submit" value="Donation" class="spendenknopf">
+</form>
+
+</div>
+<p>
+Operating the Logic server currently costs about 113.88€ per year
+(virtual server 85.07€, domain fee 28.80€); hence the Paypal donation link.
+</p>
+</div>
+
+
+<footer>
+<p style="clear:both;">
+© Christian Gottschall / christian.gottschall@posteo.de / 2021-01-02
+</p>
+</footer>
+
+
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
