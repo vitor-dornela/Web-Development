@@ -12,7 +12,7 @@ class Parser {
 		this.p = 0,
 		this.token = null,
 		this.err_msg = null,
-		this.valid_chars = "¬∧⊼∨⊽→↔↮()",
+		this.valid_chars = "¬∧⊼∨⊽→↔⊕()",
 		this.valid_propositions = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
 		this.constants = [];
 		this.emend_cnt = 1;
@@ -65,7 +65,7 @@ class Parser {
 		} else  {
 			r =  Math.floor( Math.random() * 7 );
 			s = "(" + this.emend_proposition( depth + 1 ) +
-			    "∧∨⊼⊽→↔↮"[r] +
+			    "∧∨⊼⊽→↔⊕"[r] +
 			    this.emend_proposition( depth + 1 ) + ")";
 		}
 		return s;
@@ -77,71 +77,110 @@ class Parser {
 	}
 
 	gettoken() {
-		if ( this.str == null || this.str.length == 0 ) {
-			this.adderror( "Empty string." );
+		if (this.str == null || this.str.length == 0) {
+			this.adderror("Empty string.");
 			this.token = null;
 			return null;
-		} else if ( this.p >= this.str.length ) {
-			this.token = null;
-			return null;
-		}
-
-		while ( this.str[this.p] == ' ' )
-			this.p++;
-
-		if ( this.p >= this.str.length ) {
+		} else if (this.p >= this.str.length) {
 			this.token = null;
 			return null;
 		}
 
-		if ( this.valid_chars.indexOf(this.str[this.p]) >= 0 ) {
-			this.token = this.str[this.p++];
-			return this.token;
-		} else if ( this.valid_propositions.indexOf(this.str[this.p].toUpperCase()) >= 0 ) {
-			this.token = this.str[this.p++].toUpperCase();
-			while ( this.p < this.str.length &&
-				"0123456789".indexOf(this.str[this.p]) >= 0 ) {
-				this.token = this.token + this.str[this.p++];
-			}
-			return this.token;
-		} else if ( this.str[this.p] == '&' ) {
-			this.token = "∧";
+		while (this.str[this.p] == ' ')
 			this.p++;
-			if ( this.p < this.str.length && this.str[this.p] == '&' )
+
+		if (this.p >= this.str.length) {
+			this.token = null;
+			return null;
+		}
+
+		const currentChar = this.str[this.p];
+		switch (currentChar) {
+			case ' ':
 				this.p++;
-			return this.token;
-		} else if ( this.str[this.p] == '|' ) {
-			this.token = "∨";
-			this.p++;
-			if ( this.p < this.str.length && this.str[this.p] == '|' )
-				this.p++;
-			return this.token;
-		} else if ( this.str[this.p] == '~' || this.str[this.p] == '!' ) {
-			this.token = "¬";
-			this.p++;
-			return this.token;
+				return this.gettoken();
+			case '&':
+				return this.handleAndOperator();
+			case '|':
+				return this.handleOrOperator();
+			case '~':
+			case '!':
+				return this.handleNotOperator();
+			case '=':
+			case '-':
+				return this.handleImplicationOperator();
+			case '<':
+				return this.handleBiconditionalOperator();
+			default:
+				if (this.valid_chars.indexOf(currentChar) >= 0) {
+					this.token = currentChar;
+					this.p++;
+					return this.token;
+				} else if (this.valid_propositions.indexOf(currentChar.toUpperCase()) >= 0) {
+					return this.handleProposition();
+				} else {
+					this.token = null;
+					this.adderror("Invalid character at position " + (this.p + 1) + ".");
+					return null;
+				}
 		}
-		else if ( (this.str[this.p] == '=' || this.str[this.p] == '-') &&
-			  this.str.length > this.p+1 && this.str[this.p+1] == '>' ) {
+		alert(this.adderror("Internal error: impossible case"));
+		this.token = null;
+		return null;
+	}
+
+	handleAndOperator() {
+		this.token = "∧";
+		this.p++;
+		if (this.p < this.str.length && this.str[this.p] == '&')
+			this.p++;
+		return this.token;
+	}
+
+	handleOrOperator() {
+		this.token = "∨";
+		this.p++;
+		if (this.p < this.str.length && this.str[this.p] == '|')
+			this.p++;
+		return this.token;
+	}
+
+	handleNotOperator() {
+		this.token = "¬";
+		this.p++;
+		return this.token;
+	}
+
+	handleImplicationOperator() {
+		if (this.str[this.p] == '=' && this.str.length > this.p + 1 && this.str[this.p + 1] == '>') {
 			this.p += 2;
 			this.token = "→";
 			return this.token;
+		} else {
+			this.p++;
+			this.token = "-";
+			return this.token;
 		}
-		else if ( this.str[this.p] == '<' && this.str.length > this.p+2 &&
-			  (this.str[this.p+1] == '=' || this.str[this.p+1] == '-') &&
-			  this.str[this.p+2] == '>' ) {
+	}
+
+	handleBiconditionalOperator() {
+		if (this.str.length > this.p + 2 && (this.str[this.p + 1] == '=' || this.str[this.p + 1] == '-') && this.str[this.p + 2] == '>') {
 			this.p += 3;
 			this.token = "↔";
 			return this.token;
+		} else {
+			this.p++;
+			this.token = "<";
+			return this.token;
 		}
-		else {
-			this.token = null;
-			this.adderror( "Invalid character at position " + (this.p+1) + "." );
-			return null;
+	}
+
+	handleProposition() {
+		this.token = this.str[this.p++].toUpperCase();
+		while (this.p < this.str.length && "0123456789".indexOf(this.str[this.p]) >= 0) {
+			this.token = this.token + this.str[this.p++];
 		}
-		alert( this.adderror( "Internal error: impossible case" ) );
-		this.token = null;
-		return null;
+		return this.token;
 	}
 
 	translate() {
