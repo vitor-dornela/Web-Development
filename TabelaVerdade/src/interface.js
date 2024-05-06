@@ -92,7 +92,7 @@ function loeschtaste() {
 				fehlerfeld = document.getElementById( "Fehlerfeld" );
 				if ( fehlerfeld ) {
 
-					fehlerfeld.innerText = "The input field is empty. There is nothing to eat for the purple monster. Once that you have entered text, the purple munster will happily eat it.";
+					fehlerfeld.innerText = "Não há nada para apagar.";
 					fehlerfeld.style.display = "block";
 					fehlerfeld.scrollIntoView(true);
 				}
@@ -151,8 +151,8 @@ function change_verbosity() {
 	u.style.display = uv ? "block" : "none";
 
 	if ( b )
-		b.textContent = (dv ? "Hide " : "Show ") +
-				"intermediate results";
+		b.textContent = (dv ? "Esconder " : "Mostrar ") +
+				"passo-a-passo";
 
 }
 

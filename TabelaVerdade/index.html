@@ -48,7 +48,9 @@
 <div style="margin-left:1em; max-width:42em;">
 
   <p>
-    Se preferir digitar: <br>
+    A vírgula serve para separar proposições. <br>
+    Duplo clique no botão "Apagar" para limpar tudo. <br><br>
+    Se preferir digitar, use: <br>
     "&amp;" ou "&amp;&amp;" para "∧" (conjunção 'e') <br>
     "|" ou "||" para "∨" (disjunção inclusiva 'ou')<br>
     "=&gt;" ou "-&gt;" para "→" (condicional 'se, então')<br>
@@ -122,13 +124,13 @@
 
 <p>
   Atalhos de frequente uso:
-  <span onclick="ueberschreibknopfGedrueckt(this)">(P→Q)</span> |
-  <span onclick="ueberschreibknopfGedrueckt(this)">(P∧Q)</span> |
-  <span onclick="ueberschreibknopfGedrueckt(this)">(P∨Q)</span> |
-  <span onclick="ueberschreibknopfGedrueckt(this)">(P∨¬P)</span> |
-  <span onclick="ueberschreibknopfGedrueckt(this)">(P∧¬P)</span> |
-  <span onclick="ueberschreibknopfGedrueckt(this)">(P→Q) ∨ (Q→R) </span> |
-  <span onclick="ueberschreibknopfGedrueckt(this)">((P ∨ Q) → (P ∨ Q))</span> |
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P → Q)</button>
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ Q)</button>
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ Q)</button>
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ ¬P)</button>
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ ¬P)</button>
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P → Q) ∨ (Q → R)</button>
+  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P ∨ Q) → (P ∧ Q)</button>
   </p>
 
 <p>
@@ -136,9 +138,15 @@
   </p>
   
   <div class="knopfgruppe">
-  <input type="image" src="./src/monster-klein.png" class="monsterklasse" name="EraseButton" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" style="height:85px;">
-  <input type="image" src="./src/gans-klein.png" name="AcceptButton" id="AcceptButton" alt="Duck that will show a truth-table" onclick="tabellenbau()" style="height:85px;">
-  </div>
+
+  <button type="button" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height:7vh;width: 16vh;">
+    Apagar
+  </button>
+  <button type="button" id="AcceptButton" onclick="tabellenbau()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height:7vh;width: 18vh;">
+    Randonizar
+  </button>
+  
+</div>
   
 
 </div> <!-- Knöpfe -->
