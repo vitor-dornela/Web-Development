@@ -105,10 +105,8 @@ input {
 /*	not yet working
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
-	top: 0;	*/
+	top: 0;
 	text-align: left;
-}
-
 }
 
 

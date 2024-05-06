@@ -162,15 +162,18 @@
 
 <section>
 
-<h2 id="TruthTableHeader">Tabelas-verdade</h2>
+<div id="TruthTableHeader" style="display: flex; align-items: center;">
+  <h2 style="margin-right: 1em;">Tabelas-verdade</h2>
+  <p id="ChangeVerbosity" style="margin-left: left;">
+    <button type="button" id="VerbosityButton" title="Change verbosity" onclick="change_verbosity()" style="width:auto; height:auto; font-size:large;">Mostrar passo-a-passo</button>
+  </p>
+</div>
 
 <div id="Ausgabebereich">
 
   <div id="Uebersichtstabelle" style="display: block;"></div>
   <div id="Detailtabelle" style="display: none;"></div>
-  <p id="ChangeVerbosity" style="display: block;">
-  <button type="button" id="VerbosityButton" title="Change verbosity" onclick="change_verbosity()" style="width:auto; height:auto; font-size:large;">Mostrar passo-a-passo</button>
-  </p>
+
 
 </div> <!-- Ausgabebereich -->
 
