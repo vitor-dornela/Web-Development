@@ -125,11 +125,8 @@
   <span onclick="ueberschreibknopfGedrueckt(this)">(P→Q)</span> |
   <span onclick="ueberschreibknopfGedrueckt(this)">(P∧Q)</span> |
   <span onclick="ueberschreibknopfGedrueckt(this)">(P∨Q)</span> |
-
-
   <span onclick="ueberschreibknopfGedrueckt(this)">(P∨¬P)</span> |
   <span onclick="ueberschreibknopfGedrueckt(this)">(P∧¬P)</span> |
-
   <span onclick="ueberschreibknopfGedrueckt(this)">(P→Q) ∨ (Q→R) </span> |
   <span onclick="ueberschreibknopfGedrueckt(this)">((P ∨ Q) → (P ∨ Q))</span> |
   </p>
@@ -160,15 +157,9 @@
 
 <div id="Ausgabebereich">
 
-
-
-<div id="Uebersichtstabelle" style="display: block;">
-
-<table class="Uebersichtstabelle" style="width: auto;"><thead><tr><th>P</th><th>Q</th><th style="padding-right: 1em;">R</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P → ¬(Q ∨ R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P ∨ (¬Q ∨ ¬R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P ∨ (Q ∨ R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(P → (¬Q ∧ ¬R))</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">((Q ∨ R) → P)</th><th style="text-align: center; padding-left: 0.5em; padding-right: 0.5em;">(¬P → (Q ∨ R))</th></tr></thead><tbody style="z-index: 5;"><tr><td>T</td><td>T</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>T</td><td>T</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>T</td><td>F</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>T</td><td>F</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>T</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>T</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>F</td><td style="padding-right: 1em;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td></tr><tr><td>F</td><td>F</td><td style="padding-right: 1em;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td><td style="text-align: center;">T</td><td style="text-align: center;">T</td><td style="text-align: center;">F</td></tr></tbody></table></div>
-
-<div id="Detailtabelle" style="display: none;"></div>
-
-<p id="ChangeVerbosity" style="display: block;">
+  <div id="Uebersichtstabelle" style="display: block;"></div>
+  <div id="Detailtabelle" style="display: none;"></div>
+  <p id="ChangeVerbosity" style="display: block;">
   <button type="button" id="VerbosityButton" title="Change verbosity" onclick="change_verbosity()" style="width:auto; height:auto; font-size:large;">Mostrar passo-a-passo</button>
   </p>
 
@@ -186,13 +177,7 @@
 
 <img src="rsc/monster.png" class="monsterklasseDauerhaft" alt="Monster that would like you to use the JavaScript version of this calculator" style="height:85px; float:left; margin-right:1em; margin-bottom:0.5em;">
 
-This truth-table calculator needs JavaScript to run properly (or, rather,
-to run at all). But fear not - if you don't like JavaScript, but still
-want to see truth-tables, you may use the truth-table functions of
-the <a href="formular-uk-zentral.html">server-side logic calculator</a>.
-On the other hand, if your browser does support JavaScript, you might
-ponder to turn it on for this page.
-</p>
+
 
 </noscript>
 

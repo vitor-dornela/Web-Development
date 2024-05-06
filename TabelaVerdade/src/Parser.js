@@ -152,7 +152,7 @@ class Parser {
 	}
 
 	handleImplicationOperator() {
-		if (this.str[this.p] == '=' && this.str.length > this.p + 1 && this.str[this.p + 1] == '>') {
+		if (this.str[this.p] == '='||'-' && this.str.length > this.p + 1 && this.str[this.p + 1] == '>') {
 			this.p += 2;
 			this.token = "→";
 			return this.token;
