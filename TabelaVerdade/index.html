@@ -1,25 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://www.erpelstolz.at/gateway/TruthTable.html -->
-<html lang="en" class=" xqsktwjv idc0_350">
-  
+<!-- modificado de https://www.erpelstolz.at/gateway/TruthTable.html -->
+<html lang="pt-br">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Calculadora de tabelas verdade</title>
+  <title>Jorlaine FC</title>
 
-  <link rev="made" rel="author" href="mailto:christian.gottschall@posteo.de">
-  <link rel="canonical" href="https://www.erpelstolz.at/gateway/TruthTable.html">
-
-  <link rel="alternate" hreflang="de" href="https://www.erpelstolz.at/gateway/Wahrheitstabellen.html">
-  <link rel="alternate" hreflang="en" href="https://www.erpelstolz.at/gateway/TruthTable.html">
-
-  <link rel="shortcut icon" href="https://github.com/vitor-dornela/Web-Development/blob/main/Portfolio/img/logo.png" type="image/x-icon">
-  <link rel="icon" href="https://github.com/vitor-dornela/Web-Development/blob/main/Portfolio/img/logo.png" type="image/x-icon">
-
-  <meta name="description" content="This is a versatile truth-table calculator for propositional logic. It is dedicated to the memory of Dr. Klaus Dethloff who taught this stuff and much more.">
-
-
-  <meta name="keywords" content="Logic Calculator, truth table, Wahrheitstabelle, Wahrheitstafel, propositional logic, Aussagenlogik">
+  <link rel="shortcut icon" href="./img/rapaz.ico" type="image/x-icon">
+  <link rel="icon" href="./img/rapaz.ico" type="image/x-icon">
 
   <link rel="stylesheet" type="text/css" href="./src/style.css">
   <link rel="stylesheet" type="text/css" href="./src/formular-5.css">
@@ -45,17 +34,8 @@
 <main>
 
 <header>
-<h1>Logic Calculator: Truth Tables</h1>
-<p>(featuring a purple monster and a psychic duck)</p>
+  <h1>Calculadora lógica de tabelas-verdade</h1>
 </header>
-
-
-<nav>
-<p>
-<a href="https://www.erpelstolz.at/gateway/formular-uk.html">Other programs</a> — <a href="https://www.erpelstolz.at/christian/homepage-uk.html">author</a> — <a href="https://www.erpelstolz.at/gateway/Wahrheitstabellen.html">Deutsch</a>
-</p>
-</nav>
-
 
 
 <div id="scriptsEnabled" class="scriptsEnabled" style="display: inline;">
@@ -63,49 +43,10 @@
 
 <section> <!-- intro -->
 
-<details open="">
-<summary>Welcome to this truth-table calculator for classical logic.
-Click this heading to see a more detailed introduction.</summary>
-
-
-<h2>Introduction</h2>
-
+<details>
+<summary>Clique para aprender a usar</summary>
 <div style="margin-left:1em; max-width:42em;">
 
-<p>
-This truth-table calculator for classical logic shows, well,
-<a href="https://www.britannica.com/topic/truth-table">truth-tables</a>
-for propositions of classical logic. Featuring a purple munster and a duck,
-and optionally showing intermediate results, it is one of the better
-instances of its kind.
-</p>
-
-<p>
-Use the buttons below (or your keyboard) to enter a proposition, then
-gently touch the duck to have it calculate the truth-table for you. Each
-time you touch the friendly monster to the duck's left, it will eat
-up a character (or, if there is selected text, the whole selection). If
-you double-click the monster, it will eat up the whole input (yum!).
-</p>
-<p>Once the
-table is there, use the button "Show intermediate results" or
-"Hide intermediate results" to show or hide intermediate
-results in the table.
-</p>
-
-<p>
-Since 2021 you may enter more than one proposition at a time, separating
-them with commas (e.g. " P∧Q, P∨Q, P→Q"). This
-makes it easier e.g. to compare propositions and to check if an argument
-is semantically valid.
-</p>
-
-<p>
-See a few examples below. Clicking on an example will copy it to the
-input field. Alternatively, you may leave the input field completely
-empty. On touching the duck, its psychic personality will find out
-what proposition you are thinking of (this is an experimental feature).
-</p>
 
 <p>
 <span onclick="ueberschreibknopfGedrueckt(this)">(P→Q)</span> —
@@ -120,21 +61,14 @@ what proposition you are thinking of (this is an experimental feature).
 <span onclick="ueberschreibknopfGedrueckt(this)">((P ⊼ Q) ⊽ (P ⊼ Q))</span>
 </p>
 
-<p>
-If you prefer using your keyboard, you may use the strings "&amp;"
-or "&amp;&amp;" to denote "∧"; the strings
-"|" or "||" to denote "∨"; the strings
-"=&gt;" or "-&gt;" to denote "→"; the string
-"&lt;=&gt;" or "&lt;-&gt;" to denote "↔";
-and the strings "!" or "~" to denote "¬".
-</p>
-
-<p>
-The tables are calculated in your
-browser, so the calculator is available offline, and the government won't
-ever find out what propositions you are working with (unless it hacks
-your computer).
-</p>
+  <p>
+    Se preferir digitar: <br>
+    "&amp;" ou "&amp;&amp;" para "∧" (conjunção 'e') <br>
+    "|" ou "||" para "∨" (disjunção inclusiva 'ou')<br>
+    "=&gt;" ou "-&gt;" para "→" (condicional 'se, então')<br>
+    "&lt;=&gt;" ou "&lt;-&gt;" para "↔" (bicondicional 'se, somente se') <br>
+    "!" ou "~" para "¬" (negação 'não') <br>
+  </p>
 
 
 </div>
@@ -148,19 +82,11 @@ your computer).
 
 <section> 
 
-<h2>Proposition</h2>
+<h2>Digite ou aperte os botões para inserir proposições</h2>
 
 
 <div id="Eingabebereich" class="eingabebereich">
 
-<p>
-<input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:97%;">
-</p>
-
-<div class="knopfgruppe">
-<input type="image" src="./src/monster-klein.png" class="monsterklasse" name="EraseButton" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" style="height:85px;">
-<input type="image" src="./src/gans-klein.png" name="AcceptButton" id="AcceptButton" alt="Duck that will show a truth-table" onclick="tabellenbau()" style="height:85px;">
-</div>
 
 
 <p id="Fehlerfeld" class="fehlermeldung" style="display: none; width: auto;">No errors so far.</p>
@@ -173,19 +99,19 @@ your computer).
 <button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
 <button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
 <button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
-<button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">⊕</button>
+
 </span>
 
 <span class="knopfgruppe">
 <button type="button" title="Conditional (if… then)" onclick="knopfGedrueckt(this)">→</button>
 <button type="button" title="Biconditional" onclick="knopfGedrueckt(this)">↔</button>
+<button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">⊕</button>
 <button type="button" title="Open bracket" onclick="knopfGedrueckt(this)">(</button>
 <button type="button" title="Closed bracket" onclick="knopfGedrueckt(this)">)</button>
 </span>
 
 
 <span class="knopfgruppe">
-
 <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">P</button>
 <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">Q</button>
 <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">R</button>
@@ -206,6 +132,16 @@ your computer).
 <span class="knopfgruppe">
 <button type="button" title="Further proposition" onclick="knopfGedrueckt(this)">,</button>
 </span>
+
+<p>
+  <input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:99%;">
+  </p>
+  
+  <div class="knopfgruppe">
+  <input type="image" src="./src/monster-klein.png" class="monsterklasse" name="EraseButton" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" style="height:85px;">
+  <input type="image" src="./src/gans-klein.png" name="AcceptButton" id="AcceptButton" alt="Duck that will show a truth-table" onclick="tabellenbau()" style="height:85px;">
+  </div>
+  
 
 </div> <!-- Knöpfe -->
 
