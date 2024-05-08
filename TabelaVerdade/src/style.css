@@ -1,50 +1,141 @@
 @charset "utf-8";
 
-
 /*
-   (C) Christian Gottschall 2005
+   Stylesheet für besondere Aufgabenstellungen der Formulare
 */
 
-/* Pseudoklassen */
 
-a:link { text-decoration:none; color:blue; }
-o:visited { text-decoration:none; color:blue; }
-/* a:hover { text-decoration:underline; color:blue; font-size:100%; } */
-
-
-/* allgemeine Attribute */
-body {
-	font-family:Helvetica,Arial,sans-serif;
-	font-size:12pt;
-	color:black;
-	text-align:justify;
-        background-color:#dadada;
+button {
+	width:1.8em;
+	height:2em;
+	padding: 0.3125em 0.3125em 0.3125em 0.3125em;
+	font-size:x-large;
 }
 
-address { font-family:Helvetica,Arial,sans-serif; font-size:10pt; }
-pre { font-family:monospace,fixed,Courier; }
+.schalter {
+	margin-top:0.5em;
+	margin-left:2em;
+	height:2em;
+}
 
-/* Texteingabebereich soll im Standardfall äquidistant */
-textarea { font-family:monospace,fixed,Courier;font-size:12pt;width:100%; }
 
-/* Definiendum soll fett gedruckt werden */
-dt {
-	font-weight:bold;
+footer {
 	text-align:left;
 }
 
-/* Überschriften */
+nav {
+	text-align:left;
+	margin-bottom:0.8em;
+}
 
-h1,h2,h3,h4,h5,h6 { text-align:left;text-decoration:none;font-weight:normal;
-	font-family:Helvetica,Arial,sans-serif; }
+details {
+	margin-bottom:0.8em;
+}
 
-h1 { font-size:22pt; }
-h2 { font-size:18pt; }
-h3 { font-size:14pt; }
-h4 { font-size:12pt;font-weight:bold;text-decoration:underline; }
-h5 { font-size:12pt;font-weight:bold;text-decoration:none; }
-h6 { font-size:12pt;font-weight:normal;text-decoration:underline; }
+input {
+	height: 2em;
+	font-size: large;
+	margin-right: 3em;
+}
 
-.klein { font-size:85%; }
-.eingerueckt { margin-left:7mm; }
+.ssi { display:none; }
+#ssi { display:none; }
+
+
+@keyframes animiert {
+	from {
+		box-shadow: 0 2px 2px 0;
+	}
+	to {
+		box-shadow: 0 8px 16px 0;
+	}
+}
+
+
+.knopfbereich {
+	text-align:left;
+	word-spacing:normal;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.knopfgruppe {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-right: 0.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-right: 0.5em;
+	white-space: nowrap;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+.knopfbereich * {
+	vertical-align:middle;
+}
+.knopfgruppe * {
+	vertical-align:middle;
+}
+
+
+/* iOS-Workaround */
+.knopfgruppe button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* iOS-Workaround */
+.knopfbereich button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.eingabebereich {
+/*	not yet working
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
+	text-align: left;
+}
+
+
+.spendenknopf {
+	margin-bottom:1em;
+	margin-right:0em;
+	animation-name: animiert;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+
+.fehlermeldung {
+	font-size: large;
+	border: 4px solid black;
+	display:none;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	text-align: left;
+	background-color: white;
+}
+
+
+/* C.G. 2.4.2019 - Wahrheitstabelle mit fester Überschrift */
+
+#Detailtabelle th , #Uebersichtstabelle th {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: #dadada;
+	font-size: 125%;
+}
+
 
