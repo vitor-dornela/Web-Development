@@ -110,35 +110,29 @@
           <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P ∨ Q) → (P ∧ Q)</button>
           </p>
           
-          <div class="">
+          <div class="knopfgruppe">
 
             <input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:70%;">
 
-            <span class="knopfgruppe">
-              <button type="button" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
-                Apagar
-              </button>
-            </span>
-
+            <button type="button" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
+              Apagar
+            </button>
 
             <!-- Não pode apagar por algum motivo -->
             <button type="button" id="AcceptButton" onclick="tabellenbau()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em; display: none;">
               Randonizar
             </button>
-            
-              <span class="knopfgruppe">
-              <button type="button" id="AcceptButton" onclick="document.getElementById('AcceptButton').click()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
-                Enter
-              </button>
-            </span>
 
+            <button type="button" id="AcceptButton" onclick="document.getElementById('AcceptButton').click()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
+              Enter
+            </button>
 
           </div>      
         </div> <!-- Knöpfe -->
       </div> 
     </section> <!-- Eingabebereich -->
 
-    <hr style="margin-top:1em;"> <!-- Linha horizontal -->
+    <hr style="margin-top:0.5em;"> <!-- Linha horizontal -->
 
     <section>
       <div id="TruthTableHeader" style="display: flex; align-items: center;">
@@ -158,7 +152,10 @@
   </div> <!-- javascriptEnabled -->
 
 
-
+  <noscript>
+  <p style="font-size:125%;">
+  <img src="rsc/monster.png" class="monsterklasseDauerhaft" alt="Monster that would like you to use the JavaScript version of this calculator" style="height:85px; float:left; margin-right:1em; margin-bottom:0.5em;">
+  </noscript>
 
 </main>
 
