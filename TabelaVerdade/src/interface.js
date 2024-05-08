@@ -6,7 +6,7 @@
 */
 
 
-var cgTranslatedPropositions = null;
+let cgTranslatedPropositions = null;
 let fehlerfeld;
 
 

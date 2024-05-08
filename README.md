@@ -1,4 +1,4 @@
-Todos os projetos a seguir estão online e prontos para jogar.
+Todos os projetos a seguir estão online:
 
 # [Calculadora de Tabela Verdade](https://vitor-dornela.github.io/Web-Development/TabelaVerdade/)
 
