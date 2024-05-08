@@ -258,7 +258,7 @@ function wahrheitstabelle_script_enabled() {
 		ta.addEventListener( 'keyup',
 			function(e) {
 				e.preventDefault();
-				if ( e.keyCode === 13 )
+				if ( e.key === "Enter" )
 					document.getElementById('AcceptButton').click();
 			} );
 	}
