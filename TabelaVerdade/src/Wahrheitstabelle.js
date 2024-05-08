@@ -79,7 +79,7 @@ class Wahrheitstabelle {
 			for ( let j = 0; j < this.var_cnt; j++ ) {
 				c = document.createElement("td");
 				t = document.createTextNode(
-					(i & (1 << (this.var_cnt - j - 1))) ? "T" : "F"
+					(i & (1 << (this.var_cnt - j - 1))) ? "V" : "F"
 				    );
 				c.appendChild(t);
 				r.appendChild(c);
@@ -94,7 +94,7 @@ class Wahrheitstabelle {
 					c = document.createElement("td");
 					c.style.textAlign = "center";
 					t = document.createTextNode(
-						this.exprs[j].evaluate( i, this.constants ) ?  "T" : "F"
+						this.exprs[j].evaluate( i, this.constants ) ?  "V" : "F"
 					);
 					c.appendChild(t);
 					r.appendChild(c);
