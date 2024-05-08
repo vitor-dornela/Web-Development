@@ -6,15 +6,10 @@
 
 
 button {
-	width:2em;
+	width:1.8em;
 	height:2em;
-	padding: 5px 5px 5px 5px;
+	padding: 0.3125em 0.3125em 0.3125em 0.3125em;
 	font-size:x-large;
-}
-
-
-
-label {
 }
 
 .schalter {
