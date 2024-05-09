@@ -9,10 +9,10 @@ class Parser {
 
 	constructor( str ) {
 		this.str = str;
-		this.p = 0;
-		this.token = null;
-		this.err_msg = null;
-		this.valid_chars = "¬∧⊼∨⊽→↔⊕()";
+		this.p = 0,
+		this.token = null,
+		this.err_msg = null,
+		this.valid_chars = "¬∧⊼∨⊽→↔⊕()",
 		this.valid_propositions = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
 		this.constants = [];
 		this.emend_cnt = 1;
@@ -327,7 +327,7 @@ class Parser {
 			return z;
 		} else {
 			let s = this.token.toUpperCase();
-			if ( ! s.match(/[A-Z][0-9]*/) ) {
+			if ( ! s.match(/[A-Z]\d*/) ) {
 				let t = this.emend();
 				this.adderror( "Invalid propositional letter \""
 					  + s + "\" at position " +

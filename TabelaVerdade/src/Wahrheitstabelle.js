@@ -46,9 +46,9 @@ class Wahrheitstabelle {
 
 		tb.style.zIndex = 5;
 
-		for ( let j = 0; j < this.var_cnt; j++ ) {
+		for (const constant of this.constants) {
 			c = document.createElement("th");
-			t = document.createTextNode( this.constants[j] );
+			t = document.createTextNode(constant);
 			c.appendChild(t);
 			r.appendChild(c);
 		}
