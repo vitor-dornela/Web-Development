@@ -5,41 +5,44 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=width, initial-scale=1">
-
   <title>Jorlaine FC</title>
-  <p>teste</p>
 
   <link rel="shortcut icon" href="./img/rapaz.ico" type="image/x-icon">
   <link rel="icon" href="./img/rapaz.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="./src/style-font.css">
   <link rel="stylesheet" type="text/css" href="./src/style.css">
+  <link rel="stylesheet" type="text/css" href="./src/style-font.css">
+
+  <script src="./src/Knoten.js" charset="utf-8"></script>
+  <script src="./src/Parser.js" charset="utf-8"></script>
+  <script src="./src/Wahrheitstabelle.js" charset="utf-8"></script>
+  <script src="./src/interface.js" charset="utf-8"></script>
 
   <noscript>
   <style> .scriptsEnabled { display: none } </style>
   </noscript>
 
-  <script src="./src/Knoten.js" charset="utf-8"></script>
-  <script src="./src/Parser.js" charset="utf-8"></script>
-  <script src="./src/Wahrheitstabelle.js" charset="utf-8"></script>
-  <script src="./src/Interface.js" charset="utf-8"></script>
-
 </head>
 
 
 <body onload="wahrheitstabelle_script_enabled()" data-new-gr-c-s-check-loaded="14.1170.0" data-gr-ext-installed="">
-</body>
 
 
 <main>
+
   <header>
     <h1>Calculadora lógica de tabelas-verdade</h1>
   </header>
 
+
   <div id="scriptsEnabled" class="scriptsEnabled" style="display: inline;">
+
+
     <section> <!-- intro -->
+
       <details>
         <summary>Clique para aprender a usar</summary>
         <div style="margin-left:1em; max-width:42em;">
+
           <p>
             Enter para inserir proposições. <br>
             A vírgula serve para separar proposições. <br>
@@ -56,8 +59,10 @@
     </section> <!-- intro -->
 
 
-    
-    <section> <!--  Eingabebereich -->
+  <!--  Eingabebereich -->
+
+    <section> 
+
       <h2>Digite ou aperte os botões para inserir proposições</h2>
 
       <div id="Eingabebereich" class="eingabebereich">
@@ -67,82 +72,85 @@
         <div id="knoepfe" class="knopfbereich">
 
           <span class="knopfgruppe">
-          <button type="button" title="Negation (not)" onclick="knopfGedrueckt(this)">¬</button>
-          <button type="button" title="Conjunction (and)" onclick="knopfGedrueckt(this)">∧</button>
-          <button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
-          <button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
-          <button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
+            <button type="button" title="Negation (not)" onclick="knopfGedrueckt(this)">¬</button>
+            <button type="button" title="Conjunction (and)" onclick="knopfGedrueckt(this)">∧</button>
+            <button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
+            <button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
+            <button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
 
           </span>
 
           <span class="knopfgruppe">
-          <button type="button" title="Conditional (if… then)" onclick="knopfGedrueckt(this)">→</button>
-          <button type="button" title="Biconditional" onclick="knopfGedrueckt(this)">↔</button>
-          <button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">⊕</button>
-          <button type="button" title="Open bracket" onclick="knopfGedrueckt(this)">(</button>
-          <button type="button" title="Closed bracket" onclick="knopfGedrueckt(this)">)</button>
+            <button type="button" title="Conditional (if… then)" onclick="knopfGedrueckt(this)">→</button>
+            <button type="button" title="Biconditional" onclick="knopfGedrueckt(this)">↔</button>
+            <button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">⊕</button>
+            <button type="button" title="Open bracket" onclick="knopfGedrueckt(this)">(</button>
+            <button type="button" title="Closed bracket" onclick="knopfGedrueckt(this)">)</button>
+          </span>
+
+
+          <span class="knopfgruppe">
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">P</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">Q</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">R</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">S</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">T</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">U</button>
           </span>
 
           <span class="knopfgruppe">
-          <button type="button" title="Further proposition" onclick="knopfGedrueckt(this)">,</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">A</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">B</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">C</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">D</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">E</button>
+            <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">F</button>
           </span>
 
           <span class="knopfgruppe">
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">P</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">Q</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">R</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">S</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">T</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">U</button>
+            <button type="button" title="Further proposition" onclick="knopfGedrueckt(this)">,</button>
           </span>
 
-          <span class="knopfgruppe">
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">A</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">B</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">C</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">D</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">E</button>
-          <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">F</button>
-          </span>
 
           <p>
-          Atalhos de frequente uso:
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P → Q)</button>
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ Q)</button>
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ Q)</button>
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ ¬P)</button>
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ ¬P)</button>
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P → Q) ∨ (Q → R)</button>
-          <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P ∨ Q) → (P ∧ Q)</button>
+            Atalhos de frequente uso:
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P → Q)</button>
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ Q)</button>
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ Q)</button>
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ ¬P)</button>
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ ¬P)</button>
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P → Q) ∨ (Q → R)</button>
+            <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P ∨ Q) → (P ∧ Q)</button>
           </p>
-          
-          <div class="knopfgruppe">
 
-            <input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:70%;">
+          <p>
+            <input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:99%;">
+          </p>
+    
+          <div class="knopfgruppe">
 
             <button type="button" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
               Apagar
             </button>
-
-            <!-- Não pode apagar por algum motivo -->
             <button type="button" id="AcceptButton" onclick="tabellenbau()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em; display: none;">
               Randonizar
             </button>
-
             <button type="button" id="AcceptButton" onclick="document.getElementById('AcceptButton').click()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
-              Enter
-            </button>
-
-          </div>      
+              Ir
+            </button>   
+          </div>
         </div> <!-- Knöpfe -->
-      </div> 
-    </section> <!-- Eingabebereich -->
+      </div> <!-- Eingabebereich -->
+    </section>
 
-    <hr style="margin-top:0.5em;"> <!-- Linha horizontal -->
+
+    <hr style="margin-top:1em;">
+
 
     <section>
+
       <div id="TruthTableHeader" style="display: flex; align-items: center;">
-        <h2 style="margin-right: 0.5em;">Tabelas-verdade</h2>
+        <h2 style="margin-right: 1em;">Tabelas-verdade</h2>
         <p id="ChangeVerbosity" style="margin-left: left;">
           <button type="button" id="VerbosityButton" title="Change verbosity" onclick="change_verbosity()" style="width:auto; height:auto; font-size:large;">Mostrar passo-a-passo</button>
         </p>
@@ -153,175 +161,6 @@
         <div id="Detailtabelle" style="display: none;"></div>
       </div> <!-- Ausgabebereich -->
     </section>
-
-
-<<<<<<< HEAD
-  </div> <!-- javascriptEnabled -->
-=======
-<section> <!-- intro -->
-
-<details>
-<summary>Clique para aprender a usar</summary>
-<div style="margin-left:1em; max-width:42em;">
-
-  <p>
-    Enter para inserir proposições. <br>
-    A vírgula serve para separar proposições. <br>
-    Duplo clique no botão "Apagar" para limpar tudo. <br><br>
-    Se preferir digitar, use: <br>
-    "&amp;" ou "&amp;&amp;" para "∧" (conjunção 'e') <br>
-    "|" ou "||" para "∨" (disjunção inclusiva 'ou')<br>
-    "=&gt;" ou "-&gt;" para "→" (condicional 'se, então')<br>
-    "&lt;=&gt;" ou "&lt;-&gt;" para "↔" (bicondicional 'se, somente se') <br>
-    "!" ou "~" para "¬" (negação 'não') <br>
-  </p>
-
-
-</div>
-
-</details>
-
-</section> <!-- intro -->
-
-
-<!--  Eingabebereich -->
-
-<section> 
-
-<h2>Digite ou aperte os botões para inserir proposições</h2>
-
-
-<div id="Eingabebereich" class="eingabebereich">
-
-
-
-<p id="Fehlerfeld" class="fehlermeldung" style="display: none; width: auto;">No errors so far.</p>
-
-<div id="knoepfe" class="knopfbereich">
-
-<span class="knopfgruppe">
-<button type="button" title="Negation (not)" onclick="knopfGedrueckt(this)">¬</button>
-<button type="button" title="Conjunction (and)" onclick="knopfGedrueckt(this)">∧</button>
-<button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
-<button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
-<button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
-
-</span>
-
-<span class="knopfgruppe">
-<button type="button" title="Conditional (if… then)" onclick="knopfGedrueckt(this)">→</button>
-<button type="button" title="Biconditional" onclick="knopfGedrueckt(this)">↔</button>
-<button type="button" title="exclusive or (XOR)" onclick="knopfGedrueckt(this)">⊕</button>
-<button type="button" title="Open bracket" onclick="knopfGedrueckt(this)">(</button>
-<button type="button" title="Closed bracket" onclick="knopfGedrueckt(this)">)</button>
-</span>
-
-
-<span class="knopfgruppe">
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">P</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">Q</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">R</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">S</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">T</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">U</button>
-</span>
-
-<span class="knopfgruppe">
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">A</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">B</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">C</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">D</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">E</button>
-<button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">F</button>
-</span>
-
-<span class="knopfgruppe">
-<button type="button" title="Further proposition" onclick="knopfGedrueckt(this)">,</button>
-</span>
-
-
-<p>
-  Atalhos de frequente uso:
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P → Q)</button>
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ Q)</button>
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ Q)</button>
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∨ ¬P)</button>
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P ∧ ¬P)</button>
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P → Q) ∨ (Q → R)</button>
-  <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 20vh;">(P ∨ Q) → (P ∧ Q)</button>
-  </p>
-
-<p>
-  <input type="text" id="TextAreaAusdruck" pattern="[ 0-9A-Za-z¬⊼∧⊽∨→↔⊕()&amp;|&lt;=&gt;~!,]+" style="width:99%;">
-  </p>
-  
-  <div class="knopfgruppe">
-
-  <button type="button" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
-    Apagar
-  </button>
-  <button type="button" id="AcceptButton" onclick="tabellenbau()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em; display: none;">
-    Randonizar
-  </button>
-  <button type="button" id="AcceptButton" onclick="document.getElementById('AcceptButton').click()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
-    Ir
-  </button>
-  
-</div>
-  
-
-</div> <!-- Knöpfe -->
-
-</div> <!-- Eingabebereich -->
-
-</section>
-
-
-<hr style="margin-top:1em;">
-
-
-<section>
-
-<div id="TruthTableHeader" style="display: flex; align-items: center;">
-  <h2 style="margin-right: 1em;">Tabelas-verdade</h2>
-  <p id="ChangeVerbosity" style="margin-left: left;">
-    <button type="button" id="VerbosityButton" title="Change verbosity" onclick="change_verbosity()" style="width:auto; height:auto; font-size:large;">Mostrar passo-a-passo</button>
-  </p>
-</div>
-
-<div id="Ausgabebereich">
-
-  <div id="Uebersichtstabelle" style="display: block;"></div>
-  <div id="Detailtabelle" style="display: none;"></div>
-
-
-</div> <!-- Ausgabebereich -->
-
-</section>
-
-
-</div>  <!-- javascriptEnabled -->
-
-
-<noscript>
-
-<p style="font-size:125%;">
-
-<img src="rsc/monster.png" class="monsterklasseDauerhaft" alt="Monster that would like you to use the JavaScript version of this calculator" style="height:85px; float:left; margin-right:1em; margin-bottom:0.5em;">
-
-
-
-</noscript>
->>>>>>> parent of 8291e09 (l)
-
-
-  <noscript>
-  <p style="font-size:125%;">
-  <img src="rsc/monster.png" class="monsterklasseDauerhaft" alt="Monster that would like you to use the JavaScript version of this calculator" style="height:85px; float:left; margin-right:1em; margin-bottom:0.5em;">
-  </noscript>
-
+  </div>  <!-- javascriptEnabled -->
 </main>
-
-
-
 </html>

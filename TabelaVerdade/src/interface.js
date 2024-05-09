@@ -6,7 +6,7 @@
 */
 
 
-let cgTranslatedPropositions = null;
+var cgTranslatedPropositions = null;
 let fehlerfeld;
 
 
@@ -173,25 +173,25 @@ function tabellenbau() {
 
 	cgTranslatedPropositions = [];
 
-	let err = null;
-	for (let eingabe of eingaben) {
-		let p = new Parser(eingabe);
-		cgTranslatedPropositions.push(p.translate());
+	let	err = null;
+	for ( let ei = 0; ei < eingaben.length; ei++ ) {
+		let p = new Parser( eingaben[ei] );
+		cgTranslatedPropositions.push( p.translate() );
 		let akt_err = p.geterror();
-		if (akt_err) {
-			if (err)
+		if ( akt_err ) {
+			if ( err )
 				err = err + "\n" + akt_err;
 			else
 				err = akt_err;
 		}
 	}
 
-	let d = document.getElementById("Detailtabelle"),
-		u = document.getElementById("Uebersichtstabelle"),
+	let	d = document.getElementById( "Detailtabelle" ),
+		u = document.getElementById( "Uebersichtstabelle" ),
 		dv = d ? (d.style.display != "none") : false,
 		uv = u ? (u.style.display != "none") : false;
 
-	if ((dv && uv) || (!dv && !uv)) {
+	if ( (dv && uv) || (!dv && !uv) ) {
 		dv = false;
 		uv = true;
 	}
@@ -248,6 +248,13 @@ function wahrheitstabelle_script_enabled() {
 		js = document.getElementById("scriptsEnabled");
 
 	if ( ta ) {
+		/*XXX
+		let fn = function() {
+			ta.readOnly = true;
+			window.removeEventListener( "touchstart", fn );
+		};
+		window.addEventListener( "touchstart", fn ); XXX*/
+
 		ta.addEventListener( 'keyup',
 			function(e) {
 				e.preventDefault();
@@ -262,4 +269,3 @@ function wahrheitstabelle_script_enabled() {
 
 
 }
-

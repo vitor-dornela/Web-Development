@@ -109,7 +109,7 @@ class Knoten {
 
 			cell = document.createElement( depth ? "td" : "th" );
 			text = document.createTextNode( depth == 0 ?
-				result : "" );
+				(r ? "V" : "F") : "" );
 			cell.appendChild( text );
 
 			tr.append( cell );
@@ -184,4 +184,3 @@ class Knoten {
 	}
 
 }
-

@@ -51,19 +51,20 @@ class Wahrheitstabelle {
 			t = document.createTextNode(constant);
 			c.appendChild(t);
 			r.appendChild(c);
+
 		}
-		if (c)
+		if ( c )
 			c.style.paddingRight = "1em";
 
-		for (let j = 0; j < this.exprs.length; j++) {
-			if (detail) {
-				this.exprs[j].toHtml(r);
+		for ( let j = 0; j < this.exprs.length; j++ ) {
+			if ( detail ) {
+				this.exprs[j].toHtml( r );
 			} else {
 				c = document.createElement("th");
 				c.style.textAlign = "center";
 				c.style.paddingLeft = "0.5em";
 				c.style.paddingRight = "0.5em";
-				t = document.createTextNode(this.exprs[j].toString());
+				t = document.createTextNode( this.exprs[j].toString() );
 				c.appendChild(t);
 				r.append(c);
 			}
@@ -111,5 +112,3 @@ class Wahrheitstabelle {
 	}
 
 }
-
-
