@@ -73,7 +73,7 @@ class Knoten {
 				cell.style.fontWeight = "bold";
 				cell.style.zIndex = "5";
 			}
-			text = document.createTextNode( r ? "T" : "F" );
+			text = document.createTextNode( r ? "V" : "F" );
 			cell.appendChild( text );
 			tr.appendChild( cell );
 
@@ -92,7 +92,7 @@ class Knoten {
 			if ( depth == 0 ) {
 				cell.style.fontSize = "125%";
 			}
-			text = document.createTextNode( r ? "T" : "F" );
+			text = document.createTextNode( r ? "V" : "F" );
 			cell.appendChild( text );
 
 			tr.append( cell );
@@ -107,7 +107,7 @@ class Knoten {
 
 			cell = document.createElement( depth ? "td" : "th" );
 			text = document.createTextNode( depth == 0 ?
-				(r ? "T" : "F") : "" );
+				(r ? "V" : "F") : "" );
 			cell.appendChild( text );
 
 			tr.append( cell );
