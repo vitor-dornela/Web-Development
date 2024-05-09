@@ -9,10 +9,10 @@ class Parser {
 
 	constructor( str ) {
 		this.str = str;
-		this.p = 0;
-		this.token = null;
-		this.err_msg = null;
-		this.valid_chars = "¬∧⊼∨⊽→↔⊕()";
+		this.p = 0,
+		this.token = null,
+		this.err_msg = null,
+		this.valid_chars = "¬∧⊼∨⊽→↔⊕()",
 		this.valid_propositions = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
 		this.constants = [];
 		this.emend_cnt = 1;
@@ -347,4 +347,3 @@ class Parser {
 	}
 
 }
-

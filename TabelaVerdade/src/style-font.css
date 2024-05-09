@@ -1,7 +1,16 @@
 @charset "utf-8";
+
+
 /*
    (C) Christian Gottschall 2005
 */
+
+/* Pseudoklassen */
+
+a:link { text-decoration:none; color:blue; }
+o:visited { text-decoration:none; color:blue; }
+/* a:hover { text-decoration:underline; color:blue; font-size:100%; } */
+
 
 /* allgemeine Attribute */
 body {
@@ -38,4 +47,3 @@ h6 { font-size:12pt;font-weight:normal;text-decoration:underline; }
 
 .klein { font-size:85%; }
 .eingerueckt { margin-left:7mm; }
-

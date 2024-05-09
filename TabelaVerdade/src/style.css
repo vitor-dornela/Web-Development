@@ -1,12 +1,20 @@
 @charset "utf-8";
+
 /*
    Stylesheet für besondere Aufgabenstellungen der Formulare
 */
+
+
 button {
-	width:1.8em;
+	width:2em;
 	height:2em;
-	padding: 0.3125em 0.3125em 0.3125em 0.3125em;
+	padding: 5px 5px 5px 5px;
 	font-size:x-large;
+}
+
+
+
+label {
 }
 
 .schalter {
@@ -68,30 +76,6 @@ input {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-}
-
-.enterButtons {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-right: 0.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-right: 0em;
-    white-space: nowrap;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.inputContainer {
-    width: 70%;
-}
-
-.buttonContainer {
-    width: 30%;
 }
 
 
@@ -158,5 +142,3 @@ input {
 	background-color: #dadada;
 	font-size: 125%;
 }
-
-
