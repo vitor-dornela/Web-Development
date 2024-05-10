@@ -38,7 +38,7 @@ class Knoten {
 		} else if ( this.arity == 0 ) {
 			let	i = constants.indexOf( this.name ),
 			 	m = 1 << (constants.length - i - 1),
-				r = (v & m);
+				r = (v & m) ? true : false;
 			return	r;
 		} else {
 			alert( "Internal error, arity is " + this.arity + 
@@ -103,9 +103,7 @@ class Knoten {
 		} else if ( this.arity == 0 ) {
 			let	i = constants.indexOf( this.name ),
 			 	m = 1 << (constants.length - i - 1),
-				r = (v & m);
-
-			let result = r ? "V" : "F";
+				r = (v & m) ? true : false;
 
 			cell = document.createElement( depth ? "td" : "th" );
 			text = document.createTextNode( depth == 0 ?

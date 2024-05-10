@@ -327,7 +327,7 @@ class Parser {
 			return z;
 		} else {
 			let s = this.token.toUpperCase();
-			if ( ! s.match(/[A-Z]\d*/) ) {
+			if ( ! s.match(/[A-Z][0-9]*/) ) {
 				let t = this.emend();
 				this.adderror( "Invalid propositional letter \""
 					  + s + "\" at position " +
