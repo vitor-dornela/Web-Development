@@ -20,12 +20,9 @@
   <noscript>
   <style> .scriptsEnabled { display: none } </style>
   </noscript>
-
 </head>
 
-
 <body onload="wahrheitstabelle_script_enabled()" data-new-gr-c-s-check-loaded="14.1170.0" data-gr-ext-installed="">
-
 
 <main>
 
@@ -33,41 +30,31 @@
     <h1>Calculadora lógica de tabelas-verdade</h1>
   </header>
 
-
   <div id="scriptsEnabled" class="scriptsEnabled" style="display: inline;">
 
-
-    <section> <!-- intro -->
-
+    <section> <!-- Trivia -->
       <details>
         <summary>Clique para aprender a usar</summary>
         <div style="margin-left:1em; max-width:42em;">
-
           <p>
             Enter para inserir proposições. <br>
             A vírgula serve para separar proposições. <br>
             Duplo clique no botão "Apagar" para limpar tudo. <br><br>
             Se preferir digitar, use: <br>
-            "&amp;" ou "&amp;&amp;" para "∧" (conjunção 'e') <br>
-            "|" ou "||" para "∨" (disjunção inclusiva 'ou')<br>
+            "&amp;" ou "&amp;&amp;" para "∧" (conjunção 'E') <br>
+            "|" ou "||" para "∨" (disjunção inclusiva 'OU')<br>
             "#" para "⊕" (disjunção exclusiva 'XOR')<br>
             "=&gt;" ou "-&gt;" para "→" (condicional 'se, então')<br>
             "&lt;=&gt;" ou "&lt;-&gt;" para "↔" (bicondicional 'se, somente se') <br>
-            "!" ou "~" para "¬" (negação 'não') <br>
+            "!" ou "~" para "¬" (negação 'NOT') <br>
           </p>
         </div>
       </details>
     </section> <!-- intro -->
 
-
-  <!--  Eingabebereich -->
-
-    <section> 
-
+    <section> <!--  Seção de input -->
       <h2>Digite ou aperte os botões para inserir proposições</h2>
-
       <div id="Eingabebereich" class="eingabebereich">
-
         <p id="Fehlerfeld" class="fehlermeldung" style="display: none; width: auto;">No errors so far.</p>
 
         <div id="knoepfe" class="knopfbereich">
@@ -78,7 +65,6 @@
             <button type="button" title="Sheffer stroke (NAND)" onclick="knopfGedrueckt(this)">⊼</button>
             <button type="button" title="Disjunction (or)" onclick="knopfGedrueckt(this)">∨</button>
             <button type="button" title="Peirce&#39;s arrow (NOR)" onclick="knopfGedrueckt(this)">⊽</button>
-
           </span>
 
           <span class="knopfgruppe">
@@ -88,7 +74,6 @@
             <button type="button" title="Open bracket" onclick="knopfGedrueckt(this)">(</button>
             <button type="button" title="Closed bracket" onclick="knopfGedrueckt(this)">)</button>
           </span>
-
 
           <span class="knopfgruppe">
             <button type="button" title="Propositional constant" onclick="knopfGedrueckt(this)">P</button>
@@ -112,7 +97,6 @@
             <button type="button" title="Further proposition" onclick="knopfGedrueckt(this)">,</button>
           </span>
 
-
           <p>
             Atalhos de frequente uso:
             <button type="button" onclick="ueberschreibknopfGedrueckt(this)" style="font-size: 2vh; width: 10vh;">(P → Q)</button>
@@ -130,7 +114,6 @@
           </p>
     
           <div class="knopfgruppe">
-
             <button type="button" id="EraseButton" alt="Monster that will eat a character" onclick="loeschtaste()" ondblclick="allesLoeschen()" onKeyPress="yourFunction()" onKeyDown="yourFunction()" onKeyUp="yourFunction()" style="height: 2em; width: 8em; font-size: 1em;">
               Apagar
             </button>
@@ -145,11 +128,9 @@
       </div> <!-- Eingabebereich -->
     </section>
 
+    <hr style="margin-top:1em;"> <!-- Linha divisória -->
 
-    <hr style="margin-top:1em;">
-
-
-    <section>
+    <section> <!-- Seção da tabela-verdade -->
 
       <div id="TruthTableHeader" style="display: flex; align-items: center;">
         <h2 style="margin-right: 1em;">Tabelas-verdade</h2>
