@@ -103,6 +103,8 @@ class Parser {
 				return this.handleAndOperator();
 			case '|':
 				return this.handleOrOperator();
+			case '#':
+				return this.handleXOrOperator();
 			case '~':
 			case '!':
 				return this.handleNotOperator();
@@ -145,6 +147,14 @@ class Parser {
 		return this.token;
 	}
 
+	handleXOrOperator() {
+		this.token = "⊕";
+		this.p++;
+		if (this.p < this.str.length && this.str[this.p] == '#')
+			this.p++;
+		return this.token;
+	}
+
 	handleNotOperator() {
 		this.token = "¬";
 		this.p++;
@@ -174,6 +184,8 @@ class Parser {
 			return this.token;
 		}
 	}
+
+
 
 	handleProposition() {
 		this.token = this.str[this.p++].toUpperCase();
