@@ -6,4 +6,4 @@
 
 ## [Adivinhe a Cor](https://vitor-dornela.github.io/Web-Development/color-guess-game/)
 
-## [Número Secreto](https://vitor-dornela.github.io/Web-Development/color-guess-game/)
+## [Número Secreto](https://vitor-dornela.github.io/Web-Development/Numero Secreto/)
