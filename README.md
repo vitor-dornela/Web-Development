@@ -2,6 +2,8 @@
 
 ## [Calculadora de Tabela Verdade](https://vitor-dornela.github.io/Web-Development/TabelaVerdade/)
 
-## [Jogo do Bingo](https://vitor-dornela.github.io/Web-Development/Bingo/)
+## [Bingo](https://vitor-dornela.github.io/Web-Development/Bingo/)
 
-## [Jogo das Cores](https://vitor-dornela.github.io/Web-Development/color-guess-game/)
+## [Adivinhe a Cor](https://vitor-dornela.github.io/Web-Development/color-guess-game/)
+
+## [Número Secreto](https://vitor-dornela.github.io/Web-Development/color-guess-game/)
