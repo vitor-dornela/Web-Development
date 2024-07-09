@@ -1,141 +1,208 @@
-/* Cabecalho do jogo */
-.game-header {
-    background-color: rgb(89, 237, 104);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the header */
+header {
+
+    position: fixed;
+    z-index: 100;
+    top: 0px;
     width: 100%;
-    height: 70px;
+    height: 10vh;
+    background-color:rgb(245, 210, 255);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: larger;
+    color: #9f0db6;
+
+}
+
+
+section#header-title {
+    height: 10vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    border-bottom: 5px ridge #9514b2;
+    border-top: 5px ridge #9f15be;
+
 }
 
-/* Vencedor do jogo */
-.game-winner {
-    color: rgb(157, 0, 147);
-    background-color: aqua;
+div#winner-content {
+    height: 10vh;
     display: flex;
-    width: 100%;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    border-bottom: 5px ridge #0ae4e4;
+    border-top: 5px ridge #0ae4e4;
+    color: #0ae4e4;
+    background-color: #6d15e9;
 }
 
-/* Botões do jogo */
-.game-controls {
-    width: 100%;
-    height: 70px;
+
+
+
+/* Style for the main */
+main {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* Botões do jogo: Criar cartela/Reiniciar */
-.card-control {
-    flex: 0 0 70%;
-    background-color: rgb(247, 255, 92);
+    flex-direction: row;
+    min-height: 100vh;
     width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* Botões do jogo: Jogar */
-.drawn-numbers {
-    flex: 0 0 30%;
-    background-color: rgb(255, 160, 92);
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* Área do jogo*/
-.game-area {
-    width: 100%;
-    display: flex;
-}
-
-/* Header do jogo: Cartela */
-.card-area {
-    flex: 0 0 70%;
-    background-color: rgb(103, 92, 255);
-    height: 70px;
-    display: grid;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* Área do jogo: Cartela */
-.card-area2 {
-    flex: 0 0 70%;
-    background-color: rgb(129, 120, 255);
-    width: 100%;
-    height: auto-fill;
-    display: flex; /* Using flexbox instead of grid */
-    flex-wrap: wrap; /* This will allow items to wrap to the next line if there's not enough space */
-    align-items: flex-start; /* Aligns items to the start of the container */
-    justify-content: flex-start; /* Justifies items to the start of the container */
-}
-
-/* Header do jogo: Numeros sorteados */
-.draw-area {
-    flex: 0 0 30%;
-    background-color: rgb(255, 92, 168);
-    width: 100%;
-    height: 70px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    float: left;
-}
-
-/* Área do jogo: Numeros sorteados */
-.draw-area2 {
-    flex: 0 0 30%;
-    background-color: rgb(255, 138, 193);
-    width: 100%;
-    height: auto;
-    display: inline-flex;
-    align-items: start;
-    flex-wrap: wrap-reverse;
-    float: inline-start;
     position: relative;
-    justify-content: start;
+
 }
 
-.borda-tabela {
-    border: 1px solid black;
-    margin: 1px;
+section#cards_area {
+    width: 70%;
+    background-color: rgb(248, 222, 255);
+    border-right: 2px ridge #8b19b8;
 }
 
-/* Table header & Table data */
-th, td {
-    text-align: center;
-    padding: 10px;
-    font-size: 15px;
+section#draw_area {
+    width: 30%;
+    background-color: rgb(248, 222, 255);
 }
 
-.col-2 {
-    flex-basis: 15%;
-    max-width: 15%;
-}
+div#cards_header, div#draw_header {
 
-col-4 {
-    flex-basis: 25%;
-    max-width: 25%;
-}
-
-.sorteado{
+    position: sticky;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #af76ff;
     display: flex;
-    align-items: start;
     justify-content: center;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    color: blue;
-    background-color: pink;
-    border: 1px solid rgb(34, 20, 47);
-    border-radius: 28px;
-    margin: 5px;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: #181a3d;
+    border-bottom: 1px solid #bd1be1;
+    
+
+
+}
+
+div#cards_body, div#draw_body {
+    width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 15px;
+    
+}
+
+/* Drawn balls */
+div#draw_body span {
+    background-color: #be8fff;
+    color: #5d02db;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin: 0.2rem;
+    border: 0.1rem solid #6d15e9;
+
+}
+
+.colorDrawnNumber {
+    background-color: #6d15e9;
+    color: #26e9e9;
+    font-weight: 600;
+}
+
+
+    
+div.cards {
+    display: flex;
+    flex-direction: column;
+    background-color: #c297fe;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2% 2% 2%;
+    color: #181a3d;
+    border: 1px solid #bd1be1;
+    padding: 10px;
+    font: 1em system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+div.cards h4 {
+    margin-bottom: 7px; /* Add margin-bottom to create space between the player name and table */
+}
+
+
+/* Style for the table */
+table {
+    border-collapse: separate;
+    border-spacing: 0.2rem;
+    width: 30vh;
+}
+th, td {
+    border: 0.06rem solid #bd1be1;
+    padding: 0.5rem;
+    background-color: #d5bafb;
+    color: #181a3d;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+/* Style for the footer */
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 7vh;
+    background-color: #e2e2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: #555;
+    border-top: 1px solid #2919b8;
+    border-bottom: 10px ridge #2919b8;
+}
+/* Style for the link */
+h4 a {
+    color: rgb(8, 122, 243); /* Set the link color, you can change this to your desired color */
+    text-decoration: none; /* Remove the underline */
+    }
+
+h4 a:hover {
+text-decoration: wavy underline; /* Add wavy underline on hover */
+color: #9f0db6;
+
+}
+
+/* Style for the button */
+button {
+    margin-left: 0.4rem;
+    margin-right: 0.2rem;
+    width: 5rem;
+    height: 2rem;
+    background-color: #9f0db6;
+    color: #d7b4f3;
+    border: solid 1px #d7b4f3;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Style for the button:hover */
+button:hover {
+    background-color: #bc85e9;
+    color: #9f0db6;
 }

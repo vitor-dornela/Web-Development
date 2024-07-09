@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>BinGo.o</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Bingo.o</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabecalho do jogo -->
-    <div class="game-header">
-        <h1 style="color: rgb(226, 43, 214);">Bingo Rainbow Unicorn</h1>
-    </div>
-    <!-- Mostrar vencedor -->
-    <div class="game-winner">
-        <h2 id="vencedor"></h2>
-    </div>
-    <!-- Controles do jogo -->
-    <div class="game-controls">
-        <div class="card-control">
-            <button id="botaoGerarCartela" onclick="gerarCartelaHTML()">Criar cartela</button>
-            <button id="reset" style="margin-left: 10px;" onclick="reiniciarJogo()">Reiniciar Jogo</button>
-            
-        </div>
-        <div class="drawn-numbers">
-            <button id="botaoJogar" onclick="jogarBingo()">Iniciar Jogo</button>
+    <header id="main-header">
+        <section id="header-title">
+            <h1>BINGO</h1>
+        </section>
+        
+        <section id="winner-section" style="display: none;">
+            <div id="winner-content">
+                <button onclick="restart()">Reiniciar</button>
+                <h2> <span id="winner-name"></span></h2>
+            </div>
+        </section>
+    </header>
+   
 
-        </div>
-    </div>
-    <!-- Header do jogo -->
-    <div class="game-header">
-        <!-- Header das cartelas -->
-        <div class="card-area">
-            <h3 style="color: rgb(245, 245, 245);">Cartelas dos jogadores (mínimo 2)</h3>
-        </div>
-        <!-- Header dos números sorteados -->
-        <div class="draw-area">
-            <h3 style="color: blue;">Números Sorteados</h3>
-        </div>
-    </div>
-    <!-- Área do jogo -->
-    <div class="game-area">
-        <!-- Área das cartelas -->
-        <div class="card-area2">
-            <div id="bingo" style="margin-top: 5px;"></div>
-        </div>
-        <!-- Área dos números sorteados -->
-        <div class="draw-area2" id="sorteados">
-        </div>
-    </div>
+    <main>
+        <section id="cards_area">
+            <div id="cards_header">
+                <h2>Cartelas</h2>
+                <button onclick="subscribePlayer()">Gerar</button>
+                <button onclick="restart()">Limpar</button>
+            </div>
+            
+            <div id="cards_body">
+                
+            </div>
+
+        </section>
+
+        <section id="draw_area">
+            <div id="draw_header">
+                <h2>Sorteio</h2>
+                <button onclick="play()">Jogar</button>
+
+            </div>
+            <div id="draw_body">
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <h4>Developed by <a href="https://github.com/vitor-dornela" target="_blank">vitor-dornela</a></h4>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
