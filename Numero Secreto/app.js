@@ -63,4 +63,5 @@ function reiniciarJogo() {
     exibirMenssagemInicial();
     limparCampo();
     document.getElementById('reiniciar').setAttribute('disabled', true);
+    document.getElementById('chutar').removeAttribute('disabled');
 }
