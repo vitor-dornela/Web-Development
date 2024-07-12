@@ -1,6 +1,7 @@
+let listaNumerosSorteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 0;
-let listaNumerosSorteados = []; 
+ 
 exibirMenssagemInicial();
 
 function exibirTextoNaTela(tag, texto) {
@@ -35,7 +36,6 @@ function verificarChute() {
 }
 
 function gerarNumeroAleatorio() {
-    // return Math.floor(Math.random() * 10) + 1;
     let numeroAleatorio = parseInt(Math.random() * 10) + 1;
     if (listaNumerosSorteados.includes(numeroAleatorio)) {
         return gerarNumeroAleatorio();
