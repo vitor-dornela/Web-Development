@@ -13,7 +13,6 @@ function exibirMenssagemInicial() {
     exibirTextoNaTela('p', 'Escolha um número de 1 a 10');
 }
 
-
 function verificarChute() {
     tentativas++;
     let chute = document.querySelector('input').value;
@@ -36,7 +35,8 @@ function verificarChute() {
 }
 
 function gerarNumeroAleatorio() {
-    let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+    // return Math.floor(Math.random() * 10) + 1;
+    let numeroAleatorio = parseInt(Math.random() * 10) + 1;
     if (listaNumerosSorteados.includes(numeroAleatorio)) {
         return gerarNumeroAleatorio();
     }
