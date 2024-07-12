@@ -25,6 +25,7 @@ function verificarChute() {
         exibirTextoNaTela('h1', 'Acertou!');
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
+        document.getElementById('chutar').setAttribute('disabled', false);
     } else {
         exibirTextoNaTela('p', 'Errou! Continue chutando!');
         if (numeroSecreto > chute) {
