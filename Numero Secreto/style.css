@@ -32,9 +32,9 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 24px;
-    border: 1px solid #1875E8;
-    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    border-radius: 2rem;
+    border: 0.1rem solid #1875E8;
+    box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
     position: relative;
@@ -113,16 +113,16 @@ button:disabled {
 @media screen and (max-width: 1250px) {
 
     h1 {
-        font-size: 3rem;
+        font-size: 4.5vh;
     }
 
     .container__botao {
-        font-size: 1rem;
+        font-size: 1vh;
     }
 
 
     .texto__paragrafo {
-        font-size: 1.5rem;
+        font-size: 2.5vh;
     }
 
     .container__imagem-pessoa {
@@ -135,6 +135,6 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 3vh
     }
 }
